@@ -7,12 +7,16 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
-
+  public showTable;
   myControl = new FormControl();
-  options: string[] = ['One', 'Two', 'Three'];
+  options: string[] = ['taladro', 'taladro acero', 'Taladro bronce'];
   constructor() { }
-
+  public value;
   ngOnInit() {
+    this.showTable = false;
   }
 
+  getPosts(value) {
+    this.value = value;
+  }
 }

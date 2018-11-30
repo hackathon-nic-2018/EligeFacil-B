@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { LicenseManager } from 'ag-grid-enterprise/main';
 import { HttpClient } from '@angular/common/http';
 
 import 'ag-grid-enterprise';
+import { ValueFormatterService } from 'ag-grid-community';
 LicenseManager.setLicenseKey('Evaluation_License_Valid_Until__17_November_2018__MTU0MjQxMjgwMDAwMA==e6e57614394e82591f7af9baff0981a4');
 
 @Component({
@@ -19,61 +20,53 @@ export class GridComponent implements OnInit {
   public columnDefs;
   public rowData;
 
+  @Input() value;
 
   title = 'app';
   constructor(private http: HttpClient) {
     this.columnDefs = [
       {
-        field: 'athlete',
+        field: 'descripcion',
         width: 150,
       },
       {
-        field: 'age',
-        width: 90
-      },
-      {
-        field: 'country',
+        field: 'nombre',
         width: 120
       },
       {
-        field: 'year',
-        width: 90
+        field: 'precio',
+        width: 130
       },
+      ,
       {
-        field: 'date',
-        width: 110
-      },
-      {
-        field: 'gold',
-        width: 100
-      },
-      {
-        field: 'silver',
-        width: 100
-      },
-      {
-        field: 'bronze',
-        width: 100
-      },
-      {
-        field: 'total',
-        width: 100
+        field: 'tienda',
+        width: 190
       }
     ];
 
   }
 
   ngOnInit() {
+    this.getValuesOfGrid(this.value);
+  }
+
+  getValuesOfGrid(value) {
+    this.httpGet('search/' + value);
   }
 
   onGridReady(event) {
     this.gridApi = event.api;
     this.gridColumnApi = event.columnApi;
     this.gridOptions = event;
+    this.httpGet('product');
+  }
+
+  httpGet(url) {
     this.http
-      .get('https://raw.githubusercontent.com/ag-grid/ag-grid/master/packages/ag-grid-docs/src/olympicWinners.json')
-      .subscribe(data => {
-        this.rowData = data;
-      });
+    .get('http://192.168.137.121/api/' + url)
+    .subscribe(data => {
+      console.log(data);
+      this.rowData = data;
+    });
   }
 }
