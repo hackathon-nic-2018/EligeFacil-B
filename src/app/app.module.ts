@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { PerfilTiendaComponent } from './components/perfil-tienda/perfil-tienda.component';
+import { TabsComponent } from './components/tabs/tabs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
-    PerfilTiendaComponent
+    PerfilTiendaComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,
