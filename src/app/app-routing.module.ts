@@ -9,7 +9,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
 const routes: Routes = [
   { path: 'search-bar', component: SearchBarComponent },
   { path: 'perfil-tienda', component: PerfilTiendaComponent },
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
   { path: 'tabs', component: TabsComponent }
 ];
 
