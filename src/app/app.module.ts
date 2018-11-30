@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MaterialModule } from './material.module';
-
-
 import { AgGridModule } from 'ag-grid-angular';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +14,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { PerfilTiendaComponent } from './components/perfil-tienda/perfil-tienda.component';
 import {LoginComponent} from './components/login/login.component';
 import { TabsComponent } from './components/tabs/tabs.component';
+import { ListComponentComponent } from './components/list-component/list-component.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +22,8 @@ import { TabsComponent } from './components/tabs/tabs.component';
     SearchBarComponent,
     GridComponent,
     PerfilTiendaComponent,
-    LoginComponent,
-    TabsComponent
+    TabsComponent,
+    ListComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +34,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
     AngularFontAwesomeModule
   ],
   providers: [],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
