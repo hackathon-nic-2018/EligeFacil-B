@@ -5,11 +5,13 @@ import { MaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { PerfilTiendaComponent } from './components/perfil-tienda/perfil-tienda.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    PerfilTiendaComponent
   ],
   imports: [
     BrowserModule,
