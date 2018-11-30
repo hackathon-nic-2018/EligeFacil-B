@@ -12,13 +12,17 @@ LicenseManager.setLicenseKey('Evaluation_License_Valid_Until__17_November_2018__
   styleUrls: ['./grid.component.css']
 })
 export class GridComponent implements OnInit {
-  private rowData: any;
+  // private rowData: any;
   public gridOptions;
   public gridApi;
   public gridColumnApi;
-  public columndDefs;
+  public columnDefs;
+  public rowData;
+
+
+  title = 'app';
   constructor(private http: HttpClient) {
-    this.columndDefs = [
+    this.columnDefs = [
       {
         field: 'athlete',
         width: 150,
