@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { PerfilTiendaComponent } from './components/perfil-tienda/perfil-tienda.component';
+import { TabsComponent } from './components/tabs/tabs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
-    PerfilTiendaComponent
+    PerfilTiendaComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,
