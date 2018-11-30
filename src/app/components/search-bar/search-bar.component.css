@@ -1,3 +1,6 @@
+.container {
+    width: 100%;
+}
 .example-form {
     min-width: 150px;
     max-width: 500px;
@@ -7,3 +10,29 @@
   .example-full-width {
     width: 100%;
   }
+
+  .position {
+    display: flex;
+    justify-content: center;
+    line-height: 100px;
+  
+  }
+
+  .elige {
+    text-align: center;
+  }
+
+  h1 {
+    font-style: oblique;
+    font-weight: 700;
+    font-family: initial;
+    font-size: -webkit-xxx-large;
+  }
+  .search {
+
+  }
+
+
+
+
+
