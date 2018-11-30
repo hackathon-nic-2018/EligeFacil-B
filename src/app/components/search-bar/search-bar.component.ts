@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-search-bar',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
+  myControl = new FormControl();
+  options: string[] = ['One', 'Two', 'Three'];
   constructor() { }
 
   ngOnInit() {
